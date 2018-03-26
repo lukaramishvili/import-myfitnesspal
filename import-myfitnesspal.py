@@ -145,7 +145,7 @@ cols.append("Title") # first column contains row titles (e.g. Weekday, Avg.Chang
 for monday in all_mondays:
     thisMonWeekNumber = monday.strftime('%V')
     # "26-03-2018 WEEK_NUMBER/YEAR"
-    cols.append(monday.strftime("%d-%m-%Y")+' '+thisMonWeekNumber+'/'+monday.strftime('%Y'))
+    cols.append(thisMonWeekNumber+'/'+monday.strftime('%Y')+' ('+monday.strftime("%d-%m-%Y")+')')
 # add a row that holds the change in average weight for each column's week
 weightChangeRow = []
 weightChangeRow.append('Change in avg. weight')
