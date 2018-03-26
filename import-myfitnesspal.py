@@ -159,7 +159,9 @@ for monday in all_mondays:
     weightChangeRow.append(avg_change_from_prev_week(monday))
     rows.append(weightChangeRow)
 # create one row for each weekday (the row will be populated with weights on that day)
-for i_row_weekday in range(7):
+# use [6,5,..1,0] instead of [0,1..6] so that weekdays are ordered in descending order
+reverse_weekday_numbers = list(map(lambda x: x*-1, range(-6, 1)))
+for i_row_weekday in reverse_weekday_numbers:
     nextRow = []
     # write weekday name in the first column
     nextRow.append(calendar.day_name[i_row_weekday])
