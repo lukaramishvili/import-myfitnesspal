@@ -146,12 +146,18 @@ for monday in all_mondays:
     thisMonWeekNumber = monday.strftime('%V')
     # "26-03-2018 WEEK_NUMBER/YEAR"
     cols.append(thisMonWeekNumber+'/'+monday.strftime('%Y')+' ('+monday.strftime("%d-%m-%Y")+')')
+# add a row that holds the average weight for each column's week
+weightAvgRow = []
+weightAvgRow.append('Avg. weight')
+for monday in all_mondays:
+    weightAvgRow.append(avg_weight_of_week_of_day(monday))
+rows.append(weightAvgRow)
 # add a row that holds the change in average weight for each column's week
 weightChangeRow = []
 weightChangeRow.append('Change in avg. weight')
 for monday in all_mondays:
     weightChangeRow.append(avg_change_from_prev_week(monday))
-rows.append(weightChangeRow)
+    rows.append(weightChangeRow)
 # create one row for each weekday (the row will be populated with weights on that day)
 for i_row_weekday in range(7):
     nextRow = []
