@@ -157,7 +157,7 @@ weightChangeRow = []
 weightChangeRow.append('Change in avg. weight')
 for monday in all_mondays:
     weightChangeRow.append(avg_change_from_prev_week(monday))
-    rows.append(weightChangeRow)
+rows.append(weightChangeRow)
 # create one row for each weekday (the row will be populated with weights on that day)
 # use [6,5,..1,0] instead of [0,1..6] so that weekdays are ordered in descending order
 reverse_weekday_numbers = list(map(lambda x: x*-1, range(-6, 1)))
