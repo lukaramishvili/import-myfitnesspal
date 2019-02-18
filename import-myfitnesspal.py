@@ -1,3 +1,4 @@
+#!/usr/local/bin/python
 
 ####   Author: Luka Ramishvili
 
